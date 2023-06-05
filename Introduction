@@ -1,0 +1,9 @@
+We shall try to use the notion of F-adjoint, recently introduced in the following arxiv preprint, to improve the backpropagation implementation.
+@misc{boughammoura2023backpropagation,
+      title={Backpropagation and F-adjoint}, 
+      author={Ahmed Boughammoura},
+      year={2023},
+      eprint={2304.13820},
+      archivePrefix={arXiv},
+      primaryClass={cs.NE}
+}
