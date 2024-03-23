@@ -1,0 +1,1 @@
+We shall try to use the notion of F-adjoint, recently introduced in the following arxiv preprint: "[Backpropagation and F-adjoint. arXiv preprint arXiv:2304.13820.](https://arxiv.org/abs/2304.13820)", to improve the backpropagation implementation.
