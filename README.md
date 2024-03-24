@@ -56,14 +56,15 @@ As a consequense, one may rewrite the  algorithm as follows:
 
 ## Definition of the $F$-adjoint of an $F$-propagation
 
-Let $X^0\in\mathbb{R}^{N_0}$ be a given data and let  $X^L_*\in\mathbb{R}^{N_L}$ be a given vector.  We define the F-adjoint propagation  ${F}_{*}$, through the (MLP) $A[N_0,\cdots, N_L]$, associated to the F-propagation  $F(X^0)$  as follows
+Let $`X^0\in\mathbb{R}^{N_0}`$ be a given data and let  $`X^L_*\in\mathbb{R}^{N_L}`$ be a given vector.  We define the F-adjoint propagation  ${F}_{*}$, through the (MLP) $`A[N_0,\cdots, N_L]`$, associated to the F-propagation  $F(X^0)$  as follows
 ``` math
 F_{*}(X^{0}, X^{L}_{*}):=\begin{Bmatrix} Y^{L}_{*}, X^{L-1}_{*},\cdots, X^{1}_{*},Y^{1}_{*}, X^{0}_{*} \end{Bmatrix}\  \mathrm{where}\  Y^\ell_{*}=X^{\ell}_{*}\odot {\sigma}'(Y^\ell), \ X^{\ell-1}_{*}=(W^\ell)^\top Y^\ell_{*},\ \ell=L,\cdots, 1.
 ``` 
 
-Psodocode:
-1. Require: $x, y, J, \sigma',\eta$
-2. Ensure:  $F_*$-propagation $F_*$
+Also, one may rewrite a simillar algorithm for the $F$-adjoint propagation as:
+
+1. Require: $(x,y),F(X^0), J, \sigma'$
+2. Ensure:  $`F_*`$-propagation $`F_*`$
 
       Function: $F$-propagation($x,W,\sigma$)
     
