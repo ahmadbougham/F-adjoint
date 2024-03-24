@@ -33,12 +33,12 @@ F(X^0):=\begin{Bmatrix}Y^{1},X^{1},\cdots,X^{L-1},Y^{L},X^{L}\end{Bmatrix}\  \ma
 ``` 
 Before going further, let us point that in the above definition the prefix "F" stands for "Feed-forward".
 
-As a consequense, one may rewrite the  algorithm as follows:
+As a consequense, one may rewrite the $F$-propagation algorithm as follows:
 
 1. Require: $x,W,\sigma$
 2. Ensure:  F-propagation   $F$
 
-      Function: $F$-propagation($x,W,\sigma$)
+      Function: $F$-propagation ($` F(X^0)`$)
     
       1.  $X^0\leftarrow x$
       2.  $F\leftarrow\{X^0\}$
@@ -61,12 +61,12 @@ Let $`X^0\in\mathbb{R}^{N_0}`$ be a given data and let  $`X^L_*\in\mathbb{R}^{N_
 F_{*}(X^{0}, X^{L}_{*}):=\begin{Bmatrix} Y^{L}_{*}, X^{L-1}_{*},\cdots, X^{1}_{*},Y^{1}_{*}, X^{0}_{*} \end{Bmatrix}\  \mathrm{where}\  Y^\ell_{*}=X^{\ell}_{*}\odot {\sigma}'(Y^\ell), \ X^{\ell-1}_{*}=(W^\ell)^\top Y^\ell_{*},\ \ell=L,\cdots, 1.
 ``` 
 
-Also, one may rewrite a simillar algorithm for the $F$-adjoint propagation as:
+Also, one may write a similar algorithm for the $F$-adjoint propagation as:
 
 1. Require: $(x,y),F(X^0), J, \sigma'$
 2. Ensure:  $`F_*`$-propagation $`F_*`$
 
-      Function: $F$-propagation($x,W,\sigma$)
+      Function: $F_*$-propagation ($`F_*(X^0, X_*^L)`$)
     
       1.  $X_*^L\leftarrow \frac{\partial J}{\partial X^L}(X^L, y)$
       2.  $F_* \leftarrow X_*^L$
