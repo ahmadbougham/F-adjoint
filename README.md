@@ -29,20 +29,19 @@ We   shall recall and revise the  definition of the this notion and provide some
 
 Let $X^0\in\mathbb{R}^{N_0}$ be a given data, $\sigma$ be a coordinate-wise map from $\mathbb{R}^{N_\ell}$ into $\mathbb{R}^{N_{\ell}}$ and $W^{\ell}\in \mathbb{R}^{{N_{\ell}}\times{N_{\ell-1}}}$ for all ${1\leq \ell\leq L}$. We say that we have a two-step recursive F-propagation   $F$  through the (MLP) $A[N_0,\cdots, N_L]$ if   one has the following family of vectors
 ``` math
-F(X^0):=\begin{Bmatrix}Y^{1},X^{1},\cdots,X^{L-1},Y^{L},X^{L}\end{Bmatrix}\  \mathrm{where}\  Y^\ell=W^{\ell}X^{\ell-1}, \ X^\ell=\sigma(Y^\ell),\ \ell=1,\cdots, L.
+F(X^0):=\begin{Bmatrix}X^0, Y^{1},X^{1},\cdots,X^{L-1},Y^{L},X^{L}\end{Bmatrix}\  \mathrm{where}\  Y^\ell=W^{\ell}X^{\ell-1}, \ X^\ell=\sigma(Y^\ell),\ \ell=1,\cdots, L.
 ``` 
 Before going further, let us point that in the above definition the prefix "F" stands for "Feed-forward".
 
 As a consequense, one may rewrite the $F$-propagation algorithm as follows:
 
-1. Require: $x,W,\sigma$
+1. Require: $`X^0,W,\sigma `$
 2. Ensure:  F-propagation   $F$
 
       Function: $F$-propagation ($` F(X^0)`$)
     
-      1.  $X^0\leftarrow x$
-      2.  $F\leftarrow\{X^0\}$
-      3.  For $\ell=1$ to $L$:
+      1.  $`F\leftarrow\{X^0\}`$
+      2.  For $\ell=1$ to $L$:
                             
             $Y^\ell:= W^\ell X^{\ell-1}$
                  
@@ -58,19 +57,18 @@ As a consequense, one may rewrite the $F$-propagation algorithm as follows:
 
 Let $`X^0\in\mathbb{R}^{N_0}`$ be a given data and let  $`X^L_*\in\mathbb{R}^{N_L}`$ be a given vector.  We define the F-adjoint propagation  ${F}_{*}$, through the (MLP) $`A[N_0,\cdots, N_L]`$, associated to the F-propagation  $F(X^0)$  as follows
 ``` math
-F_{*}(X^{0}, X^{L}_{*}):=\begin{Bmatrix} Y^{L}_{*}, X^{L-1}_{*},\cdots, X^{1}_{*},Y^{1}_{*}, X^{0}_{*} \end{Bmatrix}\  \mathrm{where}\  Y^\ell_{*}=X^{\ell}_{*}\odot {\sigma}'(Y^\ell), \ X^{\ell-1}_{*}=(W^\ell)^\top Y^\ell_{*},\ \ell=L,\cdots, 1.
+F_{*}(X^{0}, X^{L}_{*}):=\begin{Bmatrix} X^{L}_{*}, Y^{L}_{*}, X^{L-1}_{*},\cdots, X^{1}_{*},Y^{1}_{*}, X^{0}_{*} \end{Bmatrix}\  \mathrm{where}\  Y^\ell_{*}=X^{\ell}_{*}\odot {\sigma}'(Y^\ell), \ X^{\ell-1}_{*}=(W_\sharp^\ell)^\top Y^\ell_{*},\ \ell=L,\cdots, 1.
 ``` 
 
 Also, one may write a similar algorithm for the $F$-adjoint propagation as:
 
-1. Require: $(x,y),F(X^0), J, \sigma'$
+1. Require: $`F(X^0),X^L_*,W_\sharp, \sigma' `$
 2. Ensure:  $`F_*`$-propagation $`F_*`$
 
       Function: $F_*$-propagation ($`F_*(X^0, X_*^L)`$)
     
-      1.  $X_*^L\leftarrow \frac{\partial J}{\partial X^L}(X^L, y)$
-      2.  $F_* \leftarrow X_*^L$
-      3.  For $\ell= L$ to $1$:
+      1.  $F_* \leftarrow \{X_*^L\}$
+      2.  For $\ell= L$ to $1$:
 
             $Y^\ell_* := X^\ell_*\odot\sigma'(Y^\ell)$
 
