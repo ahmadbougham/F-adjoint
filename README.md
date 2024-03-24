@@ -36,11 +36,11 @@ Before going further, let us point that in the above definition the prefix "F" s
 As a consequense, one may rewrite the $F$-propagation algorithm as follows:
 
 1. Require: $`X^0,W,\sigma `$
-2. Ensure:  F-propagation   $F$
+2. Ensure:  F-propagation  ($` F(X^0)`$) 
 
-      Function: $F$-propagation ($` F(X^0)`$)
+      Function: $F$-propagation ($F$)
     
-      1.  $`F\leftarrow\{X^0\}`$
+      1.  $`F\leftarrow\{X^0\}`$ 
       2.  For $\ell=1$ to $L$:
                             
             $Y^\ell:= W^\ell X^{\ell-1}$
@@ -63,11 +63,11 @@ F_{*}(X^{0}, X^{L}_{*}):=\begin{Bmatrix} X^{L}_{*}, Y^{L}_{*}, X^{L-1}_{*},\cdot
 Also, one may write a similar algorithm for the $F$-adjoint propagation as:
 
 1. Require: $`F(X^0),X^L_*,W_\sharp, \sigma' `$
-2. Ensure:  $`F_*`$-propagation $`F_*`$
+2. Ensure:  $`F_*`$-propagation ($`F_*(X^0, X_*^L)`$)
 
-      Function: $F_*$-propagation ($`F_*(X^0, X_*^L)`$)
+      Function: $F_*$-propagation ($`F_*`$)
     
-      1.  $F_* \leftarrow \{X_*^L\}$
+      1.  $`F_* \leftarrow \{X_*^L\}`$
       2.  For $\ell= L$ to $1$:
 
             $Y^\ell_* := X^\ell_*\odot\sigma'(Y^\ell)$
