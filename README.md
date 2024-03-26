@@ -1,5 +1,8 @@
+<div align="center">
  
-# **A short introduction to the F-adjoint notion**
+# A short introduction to the F-adjoint
+<div align="left"> 
+ 
 
 
 This project will give some  highlight on the notion of F-adjoint which has been recently introduced in the following arxiv preprint: "[Backpropagation and F-adjoint. arXiv preprint arXiv:2304.13820.](https://arxiv.org/abs/2304.13820)". For this purpose, we consider the simple case of a fully-connected deep multi-layer perceptron (MLP) composed of $L$ layers trained in a supervised setting.  We will denote such an architecture by $` A[N_0, \cdots, N_\ell,\cdots, N_L]`$ where $N_0$ is the size of the input layer, $N_\ell$ is the size of hidden layer $\ell$,
