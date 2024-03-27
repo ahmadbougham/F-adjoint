@@ -14,10 +14,10 @@ and $N_L$ is the size of the output layer; $L$ is defined as the depth of the  (
   \begin{array}{|l|l|}
   \hline\\
   Term & Description \\ \hline
- W^{\ell}\in\mathbb{R}^{N_{\ell}\times N_{\ell-1}} & \mathrm{Weight\ matrix\ of\ the\ layer}\ \ell\  \mathrm{with\ bias} \\ \hline
- W_\sharp^{\ell}\in\mathbb{R}^{N_{\ell}\times (N_{\ell-1}-1)} & \mathrm{Weight\ matrix\ of\ the\ layer}\ \ell\  \mathrm{without\ bias}  \\ \hline
+ W^{\ell}\in\mathbb{R}^{N_{\ell}\times (N_{\ell-1}+1)} & \mathrm{Weight\ matrix\ of\ the\ layer}\ \ell\  \mathrm{with\ bias} \\ \hline
+ W_\sharp^{\ell}\in\mathbb{R}^{N_{\ell}\times N_{\ell-1}} & \mathrm{Weight\ matrix\ of\ the\ layer}\ \ell\  \mathrm{without\ bias}  \\ \hline
  Y^{\ell}\in\mathbb{R}^{N_{\ell}}  & \mathrm{Preactivation\ vector\ at\ layer}\ {\ell}, Y^{\ell} = W^{\ell}X^{\ell-1} \\ \hline
- X^{\ell}\in\mathbb{R}^{(N_{\ell}-1)}\times\{1\} & \mathrm{Activition\ vector\ at\ the\ layer} \ {\ell} \  \mathrm{with\ bias}, X^{\ell} =\sigma^{\ell}(Y^{\ell})\\ \hline
+ X^{\ell}\in\mathbb{R}^{N_{\ell}}\times\{1\} & \mathrm{Activition\ vector\ at\ the\ layer} \ {\ell} \  \mathrm{with\ bias}, X^{\ell} =\sigma^{\ell}(Y^{\ell})\\ \hline
  \sigma^\ell:\  \mathbb{R}^{N_{\ell}}\ni Y^{\ell}\longmapsto\sigma^{\ell}(Y^{\ell})\in\mathbb{R}^{N_{\ell}} & \mathrm{Coordinate-wise\ activition\ function\ of\ the\ layer}\ {\ell}\\ \hline
    \end{array}$$
 ```
